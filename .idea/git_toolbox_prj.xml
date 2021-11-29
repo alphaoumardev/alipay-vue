@@ -11,5 +11,10 @@
         <option name="enabled" value="true" />
       </CommitMessageValidationOverride>
     </option>
+    <option name="completionConfigsOverride">
+      <CommitCompletionConfigListOverride>
+        <option name="enabled" value="true" />
+      </CommitCompletionConfigListOverride>
+    </option>
   </component>
 </project>
