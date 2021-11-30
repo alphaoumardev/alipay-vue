@@ -71,4 +71,22 @@ public class UserController
         }
         return Result.success();
     }
+    @PostMapping("/register")
+    public Result register(@RequestBody User user)
+    {
+        QueryWrapper<User> wrapper = new QueryWrapper<>();
+        wrapper.eq("username", user.getUsername());
+
+        User result =userMapper.selectOne(wrapper);
+        if(result!=null)
+        {
+            return Result.error("-1","This user already exist try again!");
+        }
+        if(user.getPassword()==null)
+        {
+            user.setPassword("123456");
+        }
+        userMapper.insert(user);
+        return Result.success();
+    }
 }
