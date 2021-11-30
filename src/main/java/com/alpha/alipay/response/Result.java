@@ -5,11 +5,11 @@ import lombok.Data;
 
 @AllArgsConstructor
 @Data
-public class Result<T>
+public class Result
 {
     private String code;
-    private String msg;
-    private T data;
+    private String message;
+    private Object data;
 
     public String getCode() {
         return code;
@@ -19,47 +19,50 @@ public class Result<T>
         this.code = code;
     }
 
-    public String getMsg() {
-        return msg;
+    public String getMessage() {
+        return message;
     }
 
-    public void setMsg(String msg) {
-        this.msg = msg;
+    public void setMessage(String message)
+    {
+        this.message = message;
     }
 
-    public T getData() {
+    public Object getData() {
         return data;
     }
 
-    public void setData(T data) {
+    public void setData(Object data) {
         this.data = data;
     }
 
-    public Result() {
-    }
+    public Result() {}
 
-    public Result(T data) {
+    public Result(Object data) {
         this.data = data;
     }
 
-    public static Result success() {
-        Result result = new Result<>();
-        result.setCode("0");
-        result.setMsg("成功");
+    public static Result success()
+    {
+        Result result = new Result();
+        result.setCode("200");
+        result.setMessage("Success");
         return result;
     }
 
-    public static <T> Result<T> success(T data) {
-        Result<T> result = new Result<>(data);
-        result.setCode("0");
-        result.setMsg("成功");
+    public static  Result success(Object data)
+    {
+        Result result = new Result(data);
+        result.setCode("200");
+        result.setMessage("Success");
         return result;
     }
 
-    public static Result error(String code, String msg) {
+    public static Result error(String code, String message)
+    {
         Result result = new Result();
         result.setCode(code);
-        result.setMsg(msg);
+        result.setMessage(message);
         return result;
     }
 }

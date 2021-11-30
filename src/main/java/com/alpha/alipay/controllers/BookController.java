@@ -19,27 +19,27 @@ public class BookController
     private BookMapper bookMapper;
 
     @PostMapping("/add")
-    public Result<?> saveUser(@RequestBody Book book)
+    public Result saveUser(@RequestBody Book book)
     {
 
         bookMapper.insert(book);
         return Result.success();
     }
     @PutMapping("/update")
-    public Result<?> updateUser(@RequestBody Book book)
+    public Result updateUser(@RequestBody Book book)
     {
         bookMapper.updateById(book);
         return Result.success();
     }
     @PutMapping("/delete/{id}")
-    public Result<?> deleteUser(@PathVariable("id")Long id)
+    public Result deleteUser(@PathVariable("id")Long id)
     {
         bookMapper.deleteById(id);
         return Result.success();
     }
 
     @GetMapping("/list")
-    public Result<?> pagination(@RequestParam(value = "page",defaultValue = "1") Integer page,
+    public Result pagination(@RequestParam(value = "page",defaultValue = "1") Integer page,
                                 @RequestParam(value = "size",defaultValue = "10") Integer size,
                                 @RequestParam(defaultValue = "") String search)
     {

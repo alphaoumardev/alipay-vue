@@ -21,7 +21,7 @@ public class UserController
     private final UserMapper userMapper;
 
     @PostMapping("/add")
-    public Result<?> saveUser(@RequestBody User user)
+    public Result saveUser(@RequestBody User user)
     {
         if(user.getPassword()==null)
         {
@@ -31,20 +31,20 @@ public class UserController
         return Result.success();
     }
     @PutMapping("/update")
-    public Result<?> updateUser(@RequestBody User user)
+    public Result updateUser(@RequestBody User user)
     {
         userMapper.updateById(user);
         return Result.success();
     }
-    @PutMapping("/delete/{id}")
-    public Result<?> deleteUser(@PathVariable("id")Long id)
+    @DeleteMapping("/delete/{id}")
+    public Result deleteUser(@PathVariable("id")Long id)
     {
         userMapper.deleteById(id);
         return Result.success();
     }
 
     @GetMapping("/list")
-    public Result<?> pagination(@RequestParam(value = "page",defaultValue = "1") Integer page,
+    public Result pagination(@RequestParam(value = "page",defaultValue = "1") Integer page,
                              @RequestParam(value = "size",defaultValue = "10") Integer size,
                              @RequestParam(defaultValue = "") String search)
     {
@@ -58,7 +58,7 @@ public class UserController
         return Result.success(userPage);
     }
     @PostMapping("/login")
-    public Result<?> login(@RequestBody User user)
+    public Result login(@RequestBody User user)
     {
         QueryWrapper<User> wrapper = new QueryWrapper<>();
             wrapper.eq("username", user.getUsername());

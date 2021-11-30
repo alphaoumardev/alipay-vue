@@ -15,19 +15,19 @@ public class Knife4jConfiguration
 {
     // 地址 ip:port/doc
     @Bean(value = "SpringBoot-Vue-Demo-Api")
-    public Docket cloudMallApi() {
+    public Docket cloudMallApi()
+    {
         return new Docket(DocumentationType.SWAGGER_2)
                 .apiInfo(new ApiInfoBuilder()
-                        .title("接口文档列表")
-                        .description("接口文档")
+                        .title("The api documentation")
+                        .description("The documentation")
                         .termsOfServiceUrl("https://github.com/alphaoumardev/alipay-vue")
                         .version("1.0")
                         .build())
-                //分组名称
-                .groupName("2.X版本")
+                .groupName("2.0 version")
                 .select()
-                //这里指定Controller扫描包路径
-                .apis(RequestHandlerSelectors.basePackage("com.example.demo.controller"))
+                //Adding the controller package
+                .apis(RequestHandlerSelectors.basePackage("com.alpha.alipay.controllers"))
                 .paths(PathSelectors.any())
                 .build();
     }
