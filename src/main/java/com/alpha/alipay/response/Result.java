@@ -2,45 +2,64 @@ package com.alpha.alipay.response;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
-import org.jetbrains.annotations.NotNull;
 
 @AllArgsConstructor
 @Data
-public class Result
+public class Result<T>
 {
     private String code;
-    private String message;
-    private Object data;
+    private String msg;
+    private T data;
 
-    public Result() {}
+    public String getCode() {
+        return code;
+    }
 
-    public Result(Object data)
-    {
+    public void setCode(String code) {
+        this.code = code;
+    }
+
+    public String getMsg() {
+        return msg;
+    }
+
+    public void setMsg(String msg) {
+        this.msg = msg;
+    }
+
+    public T getData() {
+        return data;
+    }
+
+    public void setData(T data) {
         this.data = data;
     }
-    @NotNull
-    public static  Result success()
-    {
-        Result result = new Result();
-        result.setCode("200");
-        result.setMessage("success");
+
+    public Result() {
+    }
+
+    public Result(T data) {
+        this.data = data;
+    }
+
+    public static Result success() {
+        Result result = new Result<>();
+        result.setCode("0");
+        result.setMsg("成功");
         return result;
     }
 
-    @NotNull
-    public static Result success(Object data)
-    {
-        Result result = new Result(data);
-        result.setCode("200");
-        result.setMessage("success");
+    public static <T> Result<T> success(T data) {
+        Result<T> result = new Result<>(data);
+        result.setCode("0");
+        result.setMsg("成功");
         return result;
     }
-    @NotNull
-    public static  Result error(String code, String message)
-    {
+
+    public static Result error(String code, String msg) {
         Result result = new Result();
         result.setCode(code);
-        result.setMessage(message);
+        result.setMsg(msg);
         return result;
     }
 }
