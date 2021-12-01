@@ -1,0 +1,28 @@
+{
+  "properties": [
+    {
+      "name": "file.ip",
+      "type": "java.lang.String",
+      "description": "Description for file.ip."
+    },
+    {
+      "name": "alioss.endpoint",
+      "type": "java.lang.String",
+      "description": "Description for alioss.endpoint."
+    },
+    {
+      "name": "alioss.accessKeyId",
+      "type": "java.lang.String",
+      "description": "Description for alioss.accessKeyId."
+    },
+    {
+      "name": "alioss.accessKeySecret",
+      "type": "java.lang.String",
+      "description": "Description for alioss.accessKeySecret."
+    },
+    {
+      "name": "alioss.bucketName",
+      "type": "java.lang.String",
+      "description": "Description for alioss.bucketName."
+    }
+  ] }

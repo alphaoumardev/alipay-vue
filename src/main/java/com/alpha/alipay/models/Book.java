@@ -23,6 +23,6 @@ public class Book
     private BigDecimal price;
     @TableField(exist = false)
     private String username;
-    @JsonFormat(pattern = "yyyy-MM-dd", timezone = "GMT+8")
+    @JsonFormat(pattern = "YYYY-MM-DD", timezone = "GMT+8")
     private Date createTime;
 }

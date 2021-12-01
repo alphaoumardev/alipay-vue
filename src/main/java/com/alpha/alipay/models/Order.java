@@ -10,7 +10,7 @@ import java.math.BigDecimal;
 import java.util.Date;
 
 @Data
-@TableName("t_order")
+@TableName("order")
 public class Order
 {
     @TableId(type = IdType.AUTO)
@@ -23,9 +23,9 @@ public class Order
     private String orderNo;
     private Integer userId;
     private String username;
-    @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss", timezone = "GMT+8")
+    @JsonFormat(pattern = "YYYY-MM-DD HH:mm:ss", timezone = "GMT+8")
     private Date createTime;
-    @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss", timezone = "GMT+8")
+    @JsonFormat(pattern = "YYYY-MM-DD HH:mm:ss", timezone = "GMT+8")
     private Date payTime;
     private Integer state;
 
