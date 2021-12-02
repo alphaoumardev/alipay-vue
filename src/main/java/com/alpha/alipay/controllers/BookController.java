@@ -40,8 +40,8 @@ public class BookController
 
     @GetMapping("/list")
     public Result pagination(@RequestParam(value = "page",defaultValue = "1") Integer page,
-                                @RequestParam(value = "size",defaultValue = "10") Integer size,
-                                @RequestParam(defaultValue = "") String search)
+                             @RequestParam(value = "size",defaultValue = "10") Integer size,
+                             @RequestParam(defaultValue = "") String search)
     {
         Page<Book> pageInfo = new Page<>(page, size);
         LambdaQueryWrapper<Book> wrapper = Wrappers.lambdaQuery();

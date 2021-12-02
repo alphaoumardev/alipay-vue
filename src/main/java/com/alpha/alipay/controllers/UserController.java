@@ -3,6 +3,7 @@ package com.alpha.alipay.controllers;
 import com.alpha.alipay.mappers.UserMapper;
 import com.alpha.alipay.models.User;
 import com.alpha.alipay.response.Result;
+import com.alpha.alipay.utils.TokenUtils;
 import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.core.toolkit.StringUtils;
@@ -69,7 +70,11 @@ public class UserController
         {
             return Result.error("-1","The username or the password is not correct");
         }
-        return Result.success();
+//        return Result.success();
+        // 生成token
+        String token = TokenUtils.getToken(result);
+        result.setToken(token);
+        return Result.success(result);
     }
     @PostMapping("/register")
     public Result register(@RequestBody User user)
@@ -88,5 +93,12 @@ public class UserController
         }
         userMapper.insert(user);
         return Result.success();
+    }
+
+//    This is for the echart
+    @GetMapping("/count")
+    public Result countEchart()
+    {
+        return Result.success(userMapper.countAddress());
     }
 }

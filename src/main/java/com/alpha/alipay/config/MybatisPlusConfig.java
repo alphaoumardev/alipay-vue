@@ -7,13 +7,12 @@ import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
-/**
- *  mybatis-plus 分页插件
- */
+
 @Configuration
 @MapperScan("com.example.demo.mapper")
 public class MybatisPlusConfig
 {
+    //The pagination
     @Bean
     public MybatisPlusInterceptor mybatisPlusInterceptor()
     {
