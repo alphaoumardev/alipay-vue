@@ -11,7 +11,7 @@
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
-      <module name="alipay" target="15" />
+      <module name="alipay" target="16" />
     </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
