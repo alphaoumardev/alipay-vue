@@ -67,6 +67,7 @@ public class AddStudent extends JPanel implements ActionListener
                     "Error Warning", JOptionPane.ERROR_MESSAGE);
             return;
         }
+
         //whether the id is empty
         String id = tfid.getText();
         if("".equals(id))

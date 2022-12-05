@@ -6,8 +6,8 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.Objects;
 
-public class Login extends JFrame implements ActionListener {
-
+public class Login extends JFrame implements ActionListener
+{
     //定义组件
     JButton jb1,jb2=null;
     JRadioButton jrb1,jrb2=null;

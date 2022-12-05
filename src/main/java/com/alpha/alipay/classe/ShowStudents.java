@@ -80,7 +80,6 @@ public class ShowStudents extends JPanel
                         "Error", JOptionPane.ERROR_MESSAGE);
                 return ;
             }
-
             String id = data[row][0];
             if(!"".equals(id))
             {
@@ -112,7 +111,6 @@ public class ShowStudents extends JPanel
                     table.setModel(tableModel);
                     table.getColumnModel().getColumn(2).setPreferredWidth(200);
                 }
-
                 else
                 {
                     JOptionPane.showMessageDialog(null, "This student does not exits!!",

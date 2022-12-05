@@ -32,7 +32,7 @@ public class StudentManage extends JFrame implements ActionListener
             java.util.logging.Logger.getLogger(StudentManage.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         setIconImage(new ImageIcon("lala.png").getImage());
-        setSize(600,300);
+        setSize(600,400);
         setLocationRelativeTo(null);
         setResizable(false);
         setDefaultCloseOperation(EXIT_ON_CLOSE);

@@ -140,13 +140,12 @@ public class StudentImpl implements StudentDao
         }
         return student;
     }
-    public  int delStudent(String id)
+    public void delStudent(String id)
     {
         // TODO Auto-generated method stub
-        if("".equals(id)) return 1;
+        if("".equals(id)) return;
         list.removeIf(student -> id.equals(student.getId()));
         save();
-        return 0;
     }
     public  boolean ifexitname(Student student)
     {

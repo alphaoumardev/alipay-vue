@@ -1,15 +1,18 @@
 package com.alpha.alipay.classe;
 import java.io.Serializable;
 
-public class Student implements Serializable{
+public class Student implements Serializable
+{
     private String id;
     private String name;
     private String classname;
-    public Student() {
+    public Student()
+    {
         super();
         // TODO Auto-generated constructor stub
     }
-    public Student(String id, String name, String classname) {
+    public Student(String id, String name, String classname)
+    {
         super();
         this.id = id;
         this.name = name;
@@ -34,4 +37,3 @@ public class Student implements Serializable{
         this.classname = classname;
     }
 }
-

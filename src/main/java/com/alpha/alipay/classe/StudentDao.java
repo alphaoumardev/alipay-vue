@@ -10,7 +10,7 @@ public interface StudentDao
 
     Student getStudentByname(String name);
 
-    int delStudent(String id);
+    void delStudent(String id);
 
     boolean ifexitname(Student student);
 
